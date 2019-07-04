@@ -20,7 +20,7 @@ var ballSpeedy = -2;
 var playerOneScore = 0;
 var playerTwoScore = 0;
 var rand;
-
+var speedlvl = 1;
 
 
 function start() {
@@ -73,6 +73,12 @@ function move() {
 
 document.onkeydown = function(e) {
     switch (e.keyCode) {
+
+
+    	case 86:
+            addLevel();
+            break;
+
 
     	case 32:
             alert("paused")
@@ -138,7 +144,7 @@ ctx.fillRect(x2,y2,w2,h2);
 ///////////////////
 //// SCOREBOARD
 ////////////////////////
-ctx.font = "90px Comic Sans MS";
+ctx.font = "90px arial";
 ctx.fillStyle = "black";
 ctx.textAlign = "center";
 ctx.fillText(playerOneScore + "                  " + playerTwoScore, canvas.width/2, 125); 
@@ -150,10 +156,33 @@ ctx.fillText(playerOneScore + "                  " + playerTwoScore, canvas.widt
  ballx += ballSpeedx;
  bally += ballSpeedy;
 
+//////////////////
+//////// BALL
+//////////////////
 ctx.beginPath();
 ctx.arc(ballx, bally, 15, 0, 2 * Math.PI);
 ctx.fill();
 ctx.stroke();
+/////////////////////
+///////////////////
+//////////////////
+
+
+
+
+
+
+///////////////
+/////LEVEL/////
+///////////////
+ctx.font = "20px arial";
+ctx.fillStyle = "black";
+ctx.textAlign = "center";
+ctx.fillText("Speed level : " + speedlvl,425,25); 
+///////////////
+/////LEVEL/////
+///////////////
+
 
 
 
@@ -202,7 +231,7 @@ function update() {
 function playerOneGoal() {
 	playerOneScore += 1;
 	ballSpeedx = -5;
-
+	speedlvl = 1;
 
 	rand = Math.floor(Math.random() * 680) + 10;
 
@@ -215,7 +244,7 @@ function playerOneGoal() {
 function playerTwoGoal() {
 	playerTwoScore += 1;
 	ballSpeedx = 5;
-
+	speedlvl = 1;
 
 	rand = Math.floor(Math.random() * 680) + 10;
 
@@ -362,6 +391,7 @@ function addLevel() {
 		ballSpeedx -= 1;
 	}
 		console.log("ADDED SPEED!" + ballSpeedx)
+		speedlvl++;
 	}
 
 }
@@ -388,7 +418,29 @@ document.onkeydown = function(e) {
 ctx.font = "30px arial";
 ctx.fillStyle = "#2b2b2b";
 ctx.textAlign = "center";
-ctx.fillText("Press space to start....", canvas.width/2, canvas.height/2); 
+ctx.fillText("Press space to start/pause....", canvas.width/2, canvas.height/2); 
+
+ctx.font = "15px arial";
+ctx.fillStyle = "#1b1b1b";
+ctx.textAlign = "center";
+ctx.fillText("Press (S)(W) for first player to move and arrow keys for second. V to add speed level", canvas.width/2, canvas.height/2 + 75);
+
+window.onload = function() {
+
+  var ctx = canvas.getContext("2d");
+  var img = document.getElementById("pong");
+  ctx.drawImage(img, canvas.width - 700, 80);
+};
+
+
+ctx.font = "30px arial";
+ctx.fillStyle = "#2b2b2b";
+ctx.textAlign = "center";
+ctx.fillText("Press space to start/pause....", canvas.width/2, canvas.height/2); 
 
 
 
+ctx.font = "10px arial";
+ctx.fillStyle = "#2b2b2b";
+ctx.textAlign = "center";
+ctx.fillText("By mamukinto", 35, canvas.height - 5); 

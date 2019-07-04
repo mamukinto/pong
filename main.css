@@ -7,3 +7,7 @@ canvas {
 	margin-top: -350px;
 	border-radius: 12px;
 }
+
+#pong {
+	display: none;
+}
