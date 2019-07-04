@@ -292,47 +292,6 @@ if ((ballx > x2 && ballx < x2+w2) && (bally > y2 && bally < y2 +h2)) {
 
 
 
-// var a = x2 - ballx;
-// var b = y2 - bally;
-// var c = Math.sqrt( a*a + b*b );
-// if (c < 15) {
-// collision();
-
-
-// console.log("uuuu suka")	
-// }
-
-// var a1 = (x2 + w2) - ballx;
-// var b1 = y2 - bally;
-// var c1 = Math.sqrt( a1*a1 + b1*b1 );
-// if (c1 < 15) {
-// collision();	
-
-
-// console.log("TVAR DA?")
-// }
-
-// var a2 = (x2 + w2/2) - ballx;
-// var b2 = y2 - bally;
-// var c2 = Math.sqrt( a2*a2 + b2*b2 );
-// if (c2 < 15) {
-// collision();	
-
-
-// console.log("TVAR DA?")
-// }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
