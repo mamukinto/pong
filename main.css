@@ -1,0 +1,9 @@
+canvas {
+	position: absolute;
+	border: 8px solid black;
+	left: 50%;
+	margin-left: -500px;
+	top: 50vh;
+	margin-top: -350px;
+	border-radius: 12px;
+}
